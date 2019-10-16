@@ -1,0 +1,13 @@
+C:\Users\Cassio\source\repos\API-Processos-Core\bin\Debug\netcoreapp2.2\API-Processos-Core.deps.json
+C:\Users\Cassio\source\repos\API-Processos-Core\bin\Debug\netcoreapp2.2\API-Processos-Core.runtimeconfig.json
+C:\Users\Cassio\source\repos\API-Processos-Core\bin\Debug\netcoreapp2.2\API-Processos-Core.runtimeconfig.dev.json
+C:\Users\Cassio\source\repos\API-Processos-Core\bin\Debug\netcoreapp2.2\API-Processos-Core.dll
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.csproj.CoreCompileInputs.cache
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.RazorAssemblyInfo.cache
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.RazorAssemblyInfo.cs
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.AssemblyInfoInputs.cache
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.AssemblyInfo.cs
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.RazorTargetAssemblyInfo.cache
+C:\Users\Cassio\source\repos\API-Processos-Core\bin\Debug\netcoreapp2.2\API-Processos-Core.pdb
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.dll
+C:\Users\Cassio\source\repos\API-Processos-Core\obj\Debug\netcoreapp2.2\API-Processos-Core.pdb
