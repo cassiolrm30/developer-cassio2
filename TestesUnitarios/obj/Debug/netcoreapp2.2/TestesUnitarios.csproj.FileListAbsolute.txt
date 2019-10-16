@@ -1,0 +1,17 @@
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\TestesUnitarios.deps.json
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\TestesUnitarios.runtimeconfig.json
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\TestesUnitarios.runtimeconfig.dev.json
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\TestesUnitarios.dll
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.csprojAssemblyReference.cache
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.csproj.CoreCompileInputs.cache
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.AssemblyInfoInputs.cache
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.AssemblyInfo.cs
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\TestesUnitarios.pdb
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\API-Processos-Core.dll
+C:\Users\Cassio\source\repos\TestesUnitarios\bin\Debug\netcoreapp2.2\API-Processos-Core.pdb
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.csproj.CopyComplete
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.dll
+C:\Users\Cassio\source\repos\TestesUnitarios\obj\Debug\netcoreapp2.2\TestesUnitarios.pdb

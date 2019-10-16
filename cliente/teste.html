@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div style="text-align:center;font-family:Arial;font-weight:bold;font-size:25px;text-decoration:underline;padding:50px;">Escritórios e Processos</div>
+	<div style="padding:20px;text-align:center;">
+	<table style="width:100%;height:100%;" cellpadding="0" cellspacing="0">
+		<tr>
+			<td style="width:50%;vertical-align:top;">
+				<table class="table table-striped" cellspacing="0" cellpadding="0" style="font-family:Arial;font-size:13px;width:100%;border:solid 2px;" id="tabela">
+					<thead>
+						<tr style="background-color:black;color:white;height:30px;">
+							<th class="text-center" style="cursor:pointer;padding:2px;vertical-align:middle;width:20%;" id="th1">N° Processo</a></th>
+							<th class="text-center" style="cursor:pointer;padding:2px;vertical-align:middle;width:20%;" id="th2">Data da Criação</th>
+							<th class="text-center" style="cursor:pointer;padding:2px;vertical-align:middle;width:20%;" id="th3">Valor</th>
+							<th class="text-center" style="cursor:pointer;padding:2px;vertical-align:middle;width:40%;" id="th3">Escritório</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</td>
+			<td style="width:50%;text-align:center;vertical-align:middle;height:500px;">
+				<canvas id="myChart" style="width:100%;height:100%;"></canvas>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<script>
+	var URL = "http://localhost:57445/api/";
+	var qtdLinhas = "2";
+	var pagina    = "1";
+	var ordenacao = "1";
+
+	function listarProcessos()
+	{
+		var lista = [];
+		$("#tabela > tbody tr").remove();
+
+		jQuery.ajax
+		({
+			type: "get",
+			dataType: "json",
+			url: URL + "processos",
+			success: function(data)
+			{
+				var lista = data.resultado;
+				for (var i = 0; i < lista.length; i++)
+				{
+					var item = lista[i].split('|');
+					var linha = "";
+					linha += "<tr>";
+					linha += "<td class='text-center' style='height:20px;text-align:center;vertical-align:middle;padding:1px;'>" + item[1] + "</td>";
+					linha += "<td class='text-center' style='height:20px;text-align:center;vertical-align:middle;padding:1px;'>" + item[2] + "</td>";
+					linha += "<td class='text-center' style='height:20px;text-align:center;vertical-align:middle;padding:1px;'>" + item[3] + "</td>";
+					linha += "<td class='text-center' style='height:20px;text-align:center;vertical-align:middle;padding:1px;'>" + item[4] + "</td>";
+					linha += "</tr>";
+					$('#tabela > tbody:last-child').append(linha);
+				}
+			},
+			error: function(data)
+			{
+
+			},
+		});
+	}
+
+	function geraCor()
+	{
+	  var cor = "rgba(";
+	  var valorRand, min = 1, max = 255;
+	  for (var i = 1; i <= 3; i++)
+	  {
+		 min = Math.ceil(min);
+		 max = Math.floor(max);
+		 valorRand = Math.floor(Math.random() * (max - min + 1)) + min;
+		 cor += valorRand + ",";
+	  }
+	  cor += "0.7)";
+	  return cor;
+	}
+
+	function montarGraficoProcessosPorEscritorio()
+	{
+		var arrEscritorios = [];
+		var arrQtProcessos = [];
+		var arrCoresFundo  = [];
+		var arrCoresBorda  = [];
+		var corBorda = "rgba(0, 0, 0, 0.4)";
+
+		jQuery.ajax
+		({
+			type: "get",
+			dataType: "json",
+			url: URL + "processos/group",
+			success: function(data)
+			{
+				var lista = data.resultado;
+				for (var i = 0; i < lista.length; i++)
+				{
+					var item = lista[i].split('|');
+					console.log(item[0] + ";" + item[1]);
+					arrEscritorios.push(item[0]);
+					arrQtProcessos.push(item[1]);
+					arrCoresFundo.push(geraCor());
+					arrCoresBorda.push(corBorda);
+				}
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var myChart = new Chart(ctx, {
+					type: 'pie',
+					data:
+					{
+						labels: arrEscritorios,
+						datasets:
+						[{
+							data: arrQtProcessos,
+							backgroundColor: arrCoresFundo,
+							borderColor: arrCoresBorda,
+							borderWidth: 2
+						}]
+					},
+					options: { }
+				});
+			},
+			error: function(data)
+			{
+
+			},
+		});
+	}
+
+	$(document).ready(function()
+	{
+		listarProcessos();
+		montarGraficoProcessosPorEscritorio();
+	});
+	</script>
+</body>
+</html>
